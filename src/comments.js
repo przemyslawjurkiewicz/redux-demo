@@ -3,7 +3,7 @@ import {
   REMOVE_COMMENT,
   THUMB_DOWN_COMMENT,
   THUMB_UP_COMMENT,
-  EDIT_COMMENT
+  UPDATE_COMMENT
 } from './actions';
 
 function comments(state = [], action) {
@@ -18,14 +18,14 @@ function comments(state = [], action) {
         ...state
       ];
 
-    case EDIT_COMMENT:
+    case UPDATE_COMMENT:
       return state.map(comment => {
-        if (comment.id === action.id) {
-          return { ...comment, text: action.text }
+        if (comment.id === action.id && action.text !== "") {
+          return { ...comment, text: action.text };
         }
         return comment;
       });
-
+      
     case REMOVE_COMMENT:
       return state.filter(comments => comments.id !== action.id);
 
