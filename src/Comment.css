@@ -1,0 +1,37 @@
+.Comment {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    border-radius: 5px;
+    background-color: #f7f7f7;
+    margin: 5px;
+    padding: 5px;
+}
+
+.Comment .votes {
+    color: #3b5998;
+    font-size: 0.8rem;
+    font-weight: bold;
+
+}
+
+.Comment .comment-menu {
+    min-width: 350px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+
+.Comment button {
+    background: inherit;
+    color: #3b5998;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.Comment button:hover {
+    color: #dfe3ee;
+}

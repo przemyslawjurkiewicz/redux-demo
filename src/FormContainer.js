@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import './Form.css';
 import {
     addComment,
     updateComment
@@ -41,7 +42,7 @@ class CommentForm extends Component {
     handleSubmit(event) {
         event.preventDefault();
         this.props.addComment(this.state.text);
-        this.setState({ text: "" });
+        this.setState({ text: '' });
     }
 
     handleUpdate(event) {
@@ -62,17 +63,16 @@ class CommentForm extends Component {
 
     render() {
         return (
-            <form onSubmit={(e) => this.handleSubmit(e)} className="form">
+            <form onSubmit={(e) => this.handleSubmit(e)} className='Form'>
                 <div>
                     <textarea
-                        rows="7"
-                        cols="70"
+                        rows='7'
                         value={this.state.text}
                         onChange={(e) => this.handleChange(e)}
                     />
                 </div>
                 <div>
-                    <button type="submit">Add comment</button>
+                    <button type='submit'>Add comment</button>
                     <button
                         onClick={(e) => this.handleUpdate(e)}> Edit comment </button>
                     <button

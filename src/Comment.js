@@ -1,13 +1,17 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import './Comment.css';
 
 export const Comment = ({ text, votes, id, thumbUpComment, thumbDownComment, removeComment, editComment }) =>
-    <li>
+    <li className="Comment">
         {text}
-        <span> votes: {votes}</span>
-        <button onClick={() => thumbUpComment(id)}>ThumbUp</button>
-        <button onClick={() => thumbDownComment(id)}>ThumbDown</button>
-        <button onClick={() => removeComment(id)}>Remove</button>
-        <button onClick={() => editComment(id, text)}>Edit</button>
+        <span className="votes"> votes: {votes}</span>
+        <div className="comment-menu">
+        <button onClick={() => thumbUpComment(id)}><FontAwesomeIcon icon="thumbs-up" /></button>
+        <button onClick={() => thumbDownComment(id)}><FontAwesomeIcon icon="thumbs-down" /></button>
+        <button onClick={() => removeComment(id)}><FontAwesomeIcon icon="trash" /></button>
+        <button onClick={() => editComment(id, text)}><FontAwesomeIcon icon="edit" /></button>
+        </div>
     </li>;
 
 export default Comment;
